@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		int weight;
+		weight=sc.nextInt();
+		int count=-1;
+		for(int d=weight/5 ; d>=0;d--) {
+			if((weight-5*d)%3==0) {
+				count=d;  //5로 나눈값을 넣고 5kg짜리 주머니
+				weight-=count*5; //5를 뺸다음
+				count+=weight/3; //3kg짜리 주머니 만큼 채워넣는다
+				break;
+			}
+		}
+		System.out.println(count);
+		sc.close();
+	}
+	
+}
