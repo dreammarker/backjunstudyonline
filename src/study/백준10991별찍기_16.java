@@ -3,37 +3,29 @@ package study;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class 백준2522별찍기_12 {
+public class 백준10991별찍기_16 {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int count = Integer.parseInt(br.readLine());
 		StringBuilder sb = new StringBuilder();
+		
 		for(int i=0;i<count;i++) {
 			//공백
-			for(int j=0;j<count-i-1;j++) {
+			for(int j=0;j<count-1-i;j++) {
 				sb.append(" ");
 			}
 			
 			//별찍기
-			for(int z=0;z<count-(count-i-1);z++) {
+			for(int z=0;z<2*(i+1)-1;z++) {
+				if(z%2==0)
 				sb.append("*");
-			}
-			sb.append("\n");
-		}
-		for(int j=count-1;j>0;j--) {
-			//공백
-			for(int z=0;z<count-j;z++) {
+				else
 				sb.append(" ");
-			}
-			//별찍기
-			for(int w=0;w<j;w++) {
-				sb.append("*");
 			}
 			sb.append("\n");
 		}
 		System.out.println(sb);
-		
 	}
 
 }
