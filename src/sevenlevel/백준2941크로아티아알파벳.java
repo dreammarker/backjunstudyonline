@@ -11,7 +11,10 @@ public class 백준2941크로아티아알파벳 {
 		int cnt=0;
 		for(int i=0;i<insert.length();i++){
 			char q=insert.charAt(i);
-			if(q=='c'){
+			if(i==insert.length()-1){
+				
+			}
+			else if(q=='c'){
 				if(insert.charAt(i+1)=='='||insert.charAt(i+1)=='-'){
 					i++;
 				}
