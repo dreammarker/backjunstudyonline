@@ -3,6 +3,7 @@ package study;
 import java.util.*;
 import java.io.*;
 public class 백준1406에디터 {
+	//다시 풀어봐야함
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s = br.readLine();
