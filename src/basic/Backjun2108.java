@@ -7,7 +7,7 @@ import java.io.OutputStreamWriter;
 
 public class Backjun2108 {
 	static int number ;
-	static int sorted[] = new int [1000000];
+	static int sorted[] = new int [100000];
 	public static void merge(int a[],int m,int middle,int n){
 		int i = m;
 		int j = middle+1;
@@ -82,36 +82,40 @@ public class Backjun2108 {
 		}
 		mergeSort(num,0,count-1);
 		//산술평균
-		bw.write(Math.round(sum/count)+"\n");
-		
+		bw.write(Math.round((double)((double)sum/(double)count))+"\n");
 		//중앙값
 		bw.write(num[(int)Math.ceil(count/2)]+"\n");
 		
-		int ct=0;
-		int temp=0;
-		int chin=0;
 		int cnt=0;
 		//최빈값
+		int max1=0;
+		int arr[] =new int [5000];
+		
+		//sort
 		for(int i=0;i<=8000;i++) {
-			if(cnt==count) {
-				break;
-			}
-			else if(chiben[i]!=0) {
-				temp=Math.min(temp, i);
-				ct++;
-				if(count==1) {
-					chin = i-4000;
-					break;
+			if(chiben[i]!=0) {
+				if(chiben[i]>max1) {
+					cnt=0;
+					arr = new int [5000];
+					arr[cnt] = i-4000;
+					max1=chiben[i];
+					cnt++;
+				}else if(chiben[i]==max1) {
+					arr[cnt] = i-4000;
+					cnt++;
 				}
-				if(ct==2) {
-					chin = i-4000;
-					break;
-				}
-			   cnt++;
 			}
-			
 		}
-		bw.write(chin+"\n");
+		int[] arr2 = new int [cnt];
+		for(int i=0;i<cnt;i++) {
+			arr2[i] = arr[i];
+		}
+		mergeSort(arr2,0,arr2.length-1);
+		if(count!=1)
+		bw.write(arr2[1]+"\n");
+		else {
+		bw.write(arr2[0]+"\n");
+		}
 		if(count!=1) {
 			bw.write((num[count-1]-num[0])+"\n");
 		}
