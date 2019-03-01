@@ -10,16 +10,25 @@ public class Backjun2579 {
 		int n = Integer.parseInt(br.readLine());
 		int a[] =  new int [n+1];
 		int d[][] =  new int [n+1][3];
+		int e[]= new int [n+1];
 		for(int i=1;i<=n;i++) {
 			a[i]= Integer.parseInt(br.readLine());
 		}
 		//1개연속계단
 		//2개연속계단
+		//2차원 배열..
 		d[1][1]=a[1];
 		for(int i=2;i<=n;i++) {
 			d[i][1]=Math.max(d[i-2][1], d[i-2][2])+a[i];
 			d[i][2]=d[i-1][1]+a[i];
 		}
+		//1차원 배열
+		e[1] = a[1];
+		e[2] = a[1]+a[2];
+		for(int i=3;i<=n;i++) {
+			e[i]=Math.max(e[i-2]+a[i], e[i-3]+a[i]+a[i-1]);
+		}
+		System.out.println(e[n]);
 		System.out.println(Math.max(d[n][1], d[n][2]));
 /*	static int dp[] = new int [301];
 	public static void main(String[] args) throws Exception{
