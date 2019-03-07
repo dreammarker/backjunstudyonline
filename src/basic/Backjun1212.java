@@ -3,6 +3,7 @@ package basic;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+
 public class Backjun1212 {
 
 	public static void main(String[] args) throws Exception{
@@ -38,7 +39,10 @@ public class Backjun1212 {
 				}
 			}
 			else{
-				 if(n1==1){
+                if(n1==0){
+                    sb.append("0");
+                }
+				else if(n1==1){
 					sb.append("1");
 				}
 				else if(n1==2){
