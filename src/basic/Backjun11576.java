@@ -1,9 +1,12 @@
 package basic;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class Backjun11576 {
+	BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 	public static void convert(int num, int base) {
         if (num == 0) {
             return;
