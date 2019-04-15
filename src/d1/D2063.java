@@ -11,12 +11,12 @@ public class D2063 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = new Integer(br.readLine());
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		int num[] = new int [n];
-		for(int i=0;i<n;i++){
+		int num[] = new int [n+1];
+		for(int i=1;i<=n;i++){
 			num[i] = new Integer(st.nextToken());
 		}
 		Arrays.sort(num);
-		System.out.println(num[((n+1)/2)+1]);
+		System.out.println(num[(n/2)+1]);
 
 	}
 
