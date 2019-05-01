@@ -2,6 +2,7 @@ package swea기출;
 
 
 
+import java.io.BufferedWriter;
 import java.util.Scanner;
  
 public class Backjoon13460 {
@@ -9,7 +10,9 @@ public class Backjoon13460 {
     static int[][] arr;
     static Pair t,t2;
     public static void main(String[] args) {
+    	
         Scanner sc = new Scanner(System.in);
+        BufferedWriter br = new BufferedWriter(new In)
         n = sc.nextInt(); // 세로 크기
         m = sc.nextInt(); // 가로 크기
         arr = new int[n][m]; // 원 배열
