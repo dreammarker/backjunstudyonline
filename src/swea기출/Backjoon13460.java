@@ -2,23 +2,29 @@ package swea기출;
 
 
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Scanner;
  
 public class Backjoon13460 {
     static int n,m;
     static int[][] arr;
     static Pair t,t2;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
     	
         Scanner sc = new Scanner(System.in);
-        BufferedWriter br = new BufferedWriter(new In)
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        
         n = sc.nextInt(); // 세로 크기
         m = sc.nextInt(); // 가로 크기
         arr = new int[n][m]; // 원 배열
         copy = new int[n][m]; // 복사 배열
         t = new Pair(0, 0, 0, 0); // R B의 최초값
         t2 = new Pair(0, 0, 0, 0); // 케이스를 진행할 때 R B의 좌표값
+        
         for(int i=0;i<n;i++) {
             String str = sc.next();
             for(int j=0;j<m;j++) {
@@ -31,6 +37,7 @@ public class Backjoon13460 {
                 }
             }
         }
+        
         // 움직이는 조합을 모두 만들어 주자.
         solve(0,-1);
         if(result==11) result=-1;
