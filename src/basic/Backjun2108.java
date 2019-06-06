@@ -7,7 +7,7 @@ import java.io.OutputStreamWriter;
 
 public class Backjun2108 {
 	static int number ;
-	static int sorted[] = new int [100000];
+	static int sorted[] = new int [500002];
 	public static void merge(int a[],int m,int middle,int n){
 		int i = m;
 		int j = middle+1;
@@ -89,14 +89,14 @@ public class Backjun2108 {
 		int cnt=0;
 		//최빈값
 		int max1=0;
-		int arr[] =new int [5000];
+		int arr[] =new int [500002];
 		
 		//sort
 		for(int i=0;i<=8000;i++) {
 			if(chiben[i]!=0) {
 				if(chiben[i]>max1) {
 					cnt=0;
-					arr = new int [5000];
+					arr = new int [500002];
 					arr[cnt] = i-4000;
 					max1=chiben[i];
 					cnt++;
